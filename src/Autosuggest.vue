@@ -229,7 +229,9 @@ export default {
             );
           } else if (this.sectionConfigs["default"].onSelected) {
             this.sectionConfigs["default"].onSelected(null, this.searchInputOriginal);
-          } else if (this.$listeners.selected) {
+          } 
+          // Trigger @selected always
+          if (this.$listeners.selected) {
             this.$emit('selected', this.currentItem);
           }
           this.setChangeItem(null)
